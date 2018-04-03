@@ -1,0 +1,67 @@
+body{
+    font-family: "Arial";
+}
+h1{
+text-align:center;
+}
+div{
+text-align: center;
+}
+p{
+margin:0.2vw;
+}
+p.massa{
+text-align:right;
+font-size: 0.8vw;
+}
+p.number{
+font-size: 0.8vw;
+}
+h2{
+text-align:center;
+margin:0.1vw;
+font-size: 1vw;
+}
+td {
+min-width:1vw;
+}
+td.diatomic{
+background-color:#d7f873;
+}
+td.noble-gases{
+    background-color: #abf4f4;
+}
+td.alkali-metals{
+background-color: #f24a5e;
+}
+td.alkaline-earth{
+background-color: #f3ce94;
+}
+td.metalloids{
+background-color: #b9bb8f;
+}
+td.polyatomic{
+background-color: #8bf9ac;
+}
+td.transition{
+background-color: #f2a8aa;
+}
+td.post-transition{
+background-color: #b8b8b9;
+}
+td.lanthanide{
+background-color: #f2a3f5;
+}
+td.actinides{
+background-color: #f27ab8;
+}
+td.poor-metals{
+background-color: #d7d7d8;
+}
+img {
+box-shadow: 10px 8px 10px 1px;
+    display: block;
+    margin: auto;
+    height: 24vh;
+    width: 24vw;
+}
