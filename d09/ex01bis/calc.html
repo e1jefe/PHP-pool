@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Calculator</title>
+    <style>
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="" id=""></div>
+
+<input id="op_sx" type="text">
+<select id="op">
+    <option value="+"> + </option>
+    <option value="-"> - </option>
+    <option value="*"> * </option>
+    <option value="/"> / </option>
+    <option value="%"> % </option>
+</select>
+<input id="op_dx" type="text">
+<input id="try" type="submit" value="Try me!">
+
+<script type="text/javascript">
+    setInterval(function() { alert("Please use me..."); }, 30000 );
+    function PLUS() {
+        var SX = $('#op_sx').val();
+        var DX = $('#op_dx').val();
+        alert (parseInt(SX) + parseInt(DX));
+        console.log (parseInt(SX) + parseInt(DX));
+    }
+    function MINUS() {
+        var SX = $('#op_sx').val();
+        var DX = $('#op_dx').val();
+        alert (parseInt(SX) - parseInt(DX));
+        console.log (parseInt(SX) - parseInt(DX));
+    }
+    function MULT() {
+        var SX = $('#op_sx').val();
+        var DX = $('#op_dx').val();
+        alert (parseInt(SX) * parseInt(DX));
+        console.log (parseInt(SX) * parseInt(DX));
+    }
+    function DIV() {
+        var SX = $('#op_sx').val();
+        var DX = $('#op_dx').val();
+        alert (parseInt(SX) / parseInt(DX));
+        console.log (parseInt(SX) / parseInt(DX));
+    }
+    function MOD() {
+        var SX = $('#op_sx').val();
+        var DX = $('#op_dx').val();
+        alert (parseInt(SX) % parseInt(DX));
+        console.log (parseInt(SX) % parseInt(DX));
+    }
+
+    function over_9000() {
+        alert ("It’s over 9000!");
+        console.log ("It’s over 9000!");
+    }
+
+    $('#try').click(function()
+    {
+        var SX = $('#op_sx').val();
+        var DX = $('#op_dx').val();
+        var OP = $('#op').val();
+
+        if (parseInt(SX) >= 0 && parseInt(DX) >= 0)
+        {
+            if ($('#op').val() === "+")
+                PLUS();
+            else if ($('#op').val() === "-")
+                MINUS();
+            else if ($('#op').val() === "*")
+                MULT();
+            else if ($('#op').val() === "/")
+            {
+                if (parseInt(DX) > 0)
+                    DIV();
+                else
+                    over_9000();
+            }
+            else if ($('#op').val() === "%")
+            {
+                if (parseInt(DX) > 0)
+                    MOD();
+                else
+                    over_9000();
+            }
+        }
+        else
+            alert ("Error :(");
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Balloon</title>
+    <style>
+        .balloon {
+            width: 200px;
+            height: 200px;
+            margin-left: 30vw;
+            margin-top: 30vh;
+            border-radius: 100%;
+            background-color: rgb(255, 0, 0);
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="balloon" id="balloon"></div>
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        $('.balloon').click(function()
+        {
+            $('.balloon').css("width", "+=10");
+            $('.balloon').css("height", "+=10");
+            if ($('.balloon').width() > 420)
+            {
+                $('.balloon').width(200);
+                $('.balloon').height(200);
+            }
+            if ($('.balloon').css('background-color') == 'rgb(255, 0, 0)')
+                $('.balloon').css('background-color', 'rgb(0, 128, 0)');
+            else if ($('.balloon').css('background-color') == 'rgb(0, 128, 0)')
+                $('.balloon').css('background-color', 'rgb(0, 0, 255)');
+            else if ($('.balloon').css('background-color') == 'rgb(0, 0, 255)')
+                $('.balloon').css('background-color', 'rgb(255, 0, 0)');
+        });
+        $('.balloon').mouseout(function()
+        {
+            if ($('.balloon').width() > 200)
+            {
+                $('.balloon').css("width", "-=5");
+                $('.balloon').css("height", "-=5");
+            }
+            if ($('.balloon').css('background-color') == 'rgb(255, 0, 0)')
+                $('.balloon').css('background-color', 'rgb(0, 0, 255)');
+            else if ($('.balloon').css('background-color') == 'rgb(0, 128, 0)')
+                $('.balloon').css('background-color', 'rgb(255, 0, 0)');
+            else if ($('.balloon').css('background-color') == 'rgb(0, 0, 255)')
+                $('.balloon').css('background-color', 'rgb(0, 128, 0)');
+        });
+    });
+</script>
+
+<body>
+</html>
