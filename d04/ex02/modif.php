@@ -8,12 +8,12 @@ $arr = unserialize(file_get_contents("../private/passwd"));
 $login = $_POST["login"];
 $oldpw = hash('whirlpool', $_POST["oldpw"]);
 $newpw = hash('whirlpool', $_POST["newpw"]);
-foreach ($arr as $user)
+foreach ($arr as $n => $user)
 {
     if ($user["login"] === $login && $user["passwd"] === $oldpw && $oldpw !== $newpw)
     {
         $user["passwd"] = $newpw;
-        $arr[$user] = $user;
+        $arr[$n] = $user;
         file_put_contents("../private/passwd", serialize($arr));
         echo "OK\n";
         return ;

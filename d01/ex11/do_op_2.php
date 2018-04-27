@@ -6,7 +6,7 @@ function ft_error($str)
     exit();
 }
 if ($argc != 2)
-    ft__error("Incorrect Parameters");
+    ft_error("Incorrect Parameters");
 $calc = sscanf($argv[1], "%d %c %d %s");
 $nb = $calc[0];
 $op = $calc[1];
@@ -17,9 +17,9 @@ if (!is_numeric($nb) || !is_numeric($nb2))
     ft_error("Syntax Error");
 else if (!$nb2)
     if ($op == "/")
-        ft_error("floating exception");
+        ft_error("Syntax Error");
     else if ($op == "%")
-        ft_error("modulo 0 behaviour is undefined");
+        ft_error("Syntax Error");
 switch ($op)
 {
     case ("*") :
